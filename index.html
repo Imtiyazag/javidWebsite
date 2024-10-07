@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT BRIDGE</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #004085;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #a9d8f4;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 50px 20px;
+        }
+
+        section#intro {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        section#intro h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        section#intro p {
+            font-size: 1.2em;
+            color: #495057;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        section#services {
+            background-color: #ffffff;
+        }
+        section#services h2 {
+            text-align: center;
+            font-size: 2.3em;
+            margin-bottom: 40px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .service-item {
+            background-color: #f1f3f5;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+        .service-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .service-item p {
+            font-size: 1.1em;
+            color: #6c757d;
+        }
+
+        /* Contact Form */
+        section#contact {
+            background-color: #e9ecef;
+            text-align: center;
+        }
+        section#contact h2 {
+            font-size: 2.3em;
+            margin-bottom: 40px;
+        }
+        .contact-form {
+            display: inline-block;
+            text-align: left;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #adb5bd;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #004085;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>IT BRIDGE</h1>
+</header>
+
+<nav>
+    <a href="#intro">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="intro">
+    <h2>Welcome to IT BRIDGE</h2>
+    <p>We are a leading technology company dedicated to creating innovative solutions for businesses and individuals. Our passion for technology drives us to deliver the best possible products and services to our clients.</p>
+</section>
+
+<section id="services">
+    <h2>Our Expertise</h2>
+    <div class="services-grid">
+        <div class="service-item">
+            <h3>Web Development</h3>
+            <p>Building modern, responsive websites with cutting-edge technologies.</p>
+        </div>
+        <div class="service-item">
+            <h3>AI Solutions</h3>
+            <p>Implementing artificial intelligence to enhance decision-making and automation.</p>
+        </div>
+        <div class="service-item">
+            <h3>Cybersecurity</h3>
+            <p>Ensuring your digital assets are secure with our comprehensive security services.</p>
+        </div>
+        <div class="service-item">
+            <h3>Data Analytics</h3>
+            <p>Providing data-driven insights to help you make informed business decisions.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Get in Touch</h2>
+    <div class="contact-form">
+        <input type="text" id="name" placeholder="Your Name"><br>
+        <input type="email" id="email" placeholder="Your Email"><br>
+        <textarea id="message" rows="4" placeholder="Your Message"></textarea><br>
+        <button id="sendBtn">Send Message</button>
+    </div>
+    <p id="formMessage"></p>
+</section>
+
+<footer>
+    <p>&copy; 2024 IT BRIDGE. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById('sendBtn').addEventListener('click', function() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (name && email && message) {
+            document.getElementById('formMessage').textContent = 'Thank you, ' + name + '! We will get back to you shortly.';
+            document.getElementById('formMessage').style.color = 'green';
+        } else {
+            document.getElementById('formMessage').textContent = 'Please fill out all the fields.';
+            document.getElementById('formMessage').style.color = 'red';
+        }
+    });
+</script>
+
+</body>
+</html>
